@@ -1,0 +1,293 @@
+# freetexttospeech.app — full text content
+
+This file contains the complete, human-readable text content of every page on freetexttospeech.app, formatted as clean Markdown for AI search engines and language models. If you're a human, the interactive tool lives at https://freetexttospeech.app/.
+
+---
+
+## Home page
+
+### Free Text to Speech Online
+
+Paste any text, pick a voice, and hear it read aloud instantly. freetexttospeech.app runs entirely in your browser — no sign-up, no uploads, no watermarks, no character limits.
+
+### How does this free text to speech tool work?
+
+freetexttospeech.app uses the Web Speech API built into every modern browser. When you click play, your browser sends the text to its own local voice engine — typically the same one used by screen readers and your phone's voice assistant. Nothing is uploaded to a server. Your text, the audio, and every setting you choose stay on your device.
+
+### What makes freetexttospeech.app different?
+
+Most text to speech sites ask you to sign up, cap your text at 500 characters, add a watermark to the audio, or quietly upload your writing to their servers for "processing." freetexttospeech.app does none of that. It is a static page that loads once, installs a service worker for offline use, and then runs in your browser with zero network calls.
+
+- No sign-up, no login, no paywall. Open the page and it works.
+- No character limit. Paste a whole chapter if you want.
+- Full control. Adjust speech rate from 0.5× to 2×, pitch from 0 to 2, volume from silent to full.
+- 50+ voices. Every voice your OS ships with, plus any extras your browser loads.
+- Privacy by default. No tracking, no analytics, no account.
+
+### How do I convert text to speech?
+
+Paste or type your text into the editor at the top of the page. Pick a voice from the dropdown — the list is grouped by language. Drag the rate, pitch, and volume sliders to taste. Click Play. To pause mid-sentence, click Pause; to start over, click Stop. The current word is highlighted as freetexttospeech.app reads so you can follow along.
+
+### Can I download the speech as an audio file?
+
+Yes — freetexttospeech.app can record the browser's speech output to a .webm audio file using the MediaRecorder API. Support for capturing synthesised audio varies by browser: Chrome and Edge work well, Safari and Firefox are more restricted. If the download button is unavailable in your setup, the page will tell you. Either way, you can always play the audio back anytime — the page keeps your last text in local storage.
+
+### Which voices sound the most natural?
+
+Voice quality depends entirely on your operating system. In rough order: macOS and iOS ship the most natural voices out of the box (look for names like "Samantha", "Daniel", "Karen"). Windows 11 voices have improved a lot — try any "Natural" voice. Chrome on any OS adds Google's cloud voices, often labelled with the language and a speaker name. Linux defaults to eSpeak, which is robotic but functional. For studio-grade neural voices, the upgrade path on freesuite.app uses a paid AI engine.
+
+### Is freetexttospeech.app really free?
+
+Yes. There are no ads, no trials, no premium tier on this page. freetexttospeech.app is part of the Freesuite collection of free browser tools, funded by the optional $2.88/month subscription for the pro features across the whole suite. Using this page on its own costs nothing and never will.
+
+### FAQ (home)
+
+**Is this text to speech tool really free?** Yes. freetexttospeech.app is completely free with no sign-up, no watermarks, and no character limits. It runs in your browser using the built-in Web Speech API, so there are no server costs to pass on to you.
+
+**Does my text get uploaded anywhere?** No. All speech synthesis happens locally in your browser. Your text never leaves your device. freetexttospeech.app has no backend and collects no data.
+
+**How many voices are available?** The voices come from your operating system and browser. Most modern setups offer 30 to 100 voices across dozens of languages. macOS and iOS have the highest-quality voices out of the box. Chrome on any platform also loads extra Google voices.
+
+**Can I download the audio as an MP3?** freetexttospeech.app can record the speech output to a .webm audio file in browsers that support MediaRecorder on synthesised audio. Support varies — if your browser does not expose the synth stream, the download button will tell you. You can always screen-record locally for an audio file.
+
+**What languages are supported?** Every language your operating system ships voices for — typically English, Spanish, French, German, Italian, Portuguese, Chinese, Japanese, Korean, Arabic, Hindi, and many more. Use the language filter in the voice picker to narrow the list.
+
+**Does it work offline?** Yes. After your first visit, freetexttospeech.app caches itself via a service worker. The browser's built-in voices work offline on most platforms. Some Chrome voices may require a connection on first use.
+
+---
+
+## Page: /pages/vs-naturalreader.html
+
+### A Free NaturalReader Alternative That Doesn't Ask You to Sign Up
+
+freetexttospeech.app is a free, browser-based text to speech tool with no account, no daily minute limit, and no uploads. If you came to NaturalReader looking for a quick way to listen to an article, document, or essay, this is the lighter, faster alternative.
+
+### freetexttospeech.app vs NaturalReader — the honest comparison
+
+NaturalReader is a capable product with premium neural voices, a polished app, and features like PDF and Word import. It also asks you to create an account and caps the free tier at 20 minutes of daily listening on the best voices. freetexttospeech.app is narrower: it reads any text you paste, using the voices already on your device. That means no limits, no sign-up, and no sending your text to a server you don't control.
+
+#### Comparison table
+
+| Feature | freetexttospeech.app | NaturalReader (Free) |
+|---|---|---|
+| Price | $0 forever | $0 with limits |
+| Sign-up required | No | Yes for full use |
+| Daily listening cap | None | 20 minutes on premium voices |
+| Character limit | Unlimited | Effectively limited by listening cap |
+| Processing location | 100% local in browser | Server-side for premium voices |
+| Voice count | 30–100 (your OS voices) | 20+ incl. premium neural |
+| Pause / resume / stop | Yes | Yes |
+| Word highlighting | Yes | Yes |
+| Download audio | Browser-dependent (.webm) | Paid tier only |
+| PDF / Word import | Paste text instead | Yes |
+| Works offline | Yes (installable PWA) | No |
+
+### When freetexttospeech.app is the better choice
+
+- You just want to paste an article or essay and listen without an account.
+- You read too much to fit inside NaturalReader's 20-minute daily cap.
+- You don't want the text you're reading (drafts, private notes, client material) sent to someone else's servers.
+- You want a tool that still works when your wifi drops.
+
+### When NaturalReader is the better choice
+
+- You want a desktop app that reads PDFs, DOCX, EPUB, and images via OCR.
+- You're happy to pay for premium neural voices inside a single product.
+- You need OCR, reading speed profiles, or Chrome extension integration.
+
+### What about voice quality?
+
+Both tools fall back to your operating system's built-in voices on the free tier. On macOS and iOS, those voices are excellent — try "Samantha" or "Daniel". On Windows 11, look for voices labelled "Natural". On Android and Chrome OS, the Google TTS voices are strong. If you want studio-grade neural voices, the freesuite.app Pro upgrade on freetexttospeech.app matches NaturalReader's premium tier for $2.88/month, unlocked across every Freesuite tool.
+
+---
+
+## Page: /pages/vs-ttsmp3.html
+
+### A Free TTSMP3 Alternative — No Ads, No Character Cap, No Uploads
+
+freetexttospeech.app is a clean, browser-based text to speech tool that does the same core job as TTSMP3 without the ads, the 3,000-character limit, or the server round-trip. Paste your text, hit play, done.
+
+### Why people look for a TTSMP3 alternative
+
+TTSMP3 is convenient but dated. It's wrapped in ads, caps free text at around 3,000 characters per render, and sends every paragraph you paste to a backend server to generate the audio. For most use cases — listening to an article, proofreading an essay, practising a speech — that's overkill. freetexttospeech.app does the same thing locally, in under a second, with no limits.
+
+#### Comparison table
+
+| Feature | freetexttospeech.app | TTSMP3 |
+|---|---|---|
+| Cost | Free, no ads | Free with ads |
+| Character limit | Unlimited | ~3,000 per render |
+| Sign-up | Not needed | Not needed (free tier) |
+| Where synthesis runs | Your browser | TTSMP3 servers |
+| Privacy | Nothing uploaded | Text sent to server |
+| .mp3 download | .webm via MediaRecorder | Direct .mp3 |
+| Voices | Your OS voices (30–100) | Polly-style neural voices |
+| Pause / resume | Yes | Render once, play back |
+| Word highlighting | Yes | No |
+| Works offline | Yes (PWA) | Online only |
+
+### When freetexttospeech.app wins
+
+- Long content — articles, chapters, transcripts — that would take multiple TTSMP3 renders.
+- Interactive listening where you want to pause, scrub, slow down, or re-read mid-paragraph.
+- Sensitive material (drafts, client docs, private messages) that shouldn't go to a third-party server.
+- Spotty internet — once cached, freetexttospeech.app works offline.
+- Anyone who is tired of ad-supported utilities.
+
+### When TTSMP3 is still useful
+
+- You need a single-click .mp3 file delivered by the server with premium neural voice quality.
+- You want Amazon Polly–style voices without paying for AWS yourself.
+- You only need to render 1–2 short clips and don't mind the cap.
+
+### Can freetexttospeech.app generate an .mp3 file too?
+
+Yes, sort of. The download button routes the browser's speech output through MediaRecorder and saves a .webm audio file. Most tools (VLC, ffmpeg, Audacity, and every podcast app) read .webm the same as .mp3. If you specifically need .mp3, open the downloaded file in any audio converter — or use the Pro AI Voices upgrade on freesuite.app, which generates a real .mp3 from a higher-quality neural voice.
+
+---
+
+## Page: /pages/text-to-speech-for-studying.html
+
+### Text to Speech for Studying — Turn Notes Into Audio, Free
+
+freetexttospeech.app lets students paste lecture notes, textbook chapters, or revision cards and listen to them anywhere — in the gym, on the train, on a walk. No sign-up, no limit, no uploads. Just audio from your text.
+
+### Why listening helps you learn
+
+Dual coding — the idea of pairing written and spoken information — is one of the few study techniques with robust evidence behind it. Listening to notes while you've already read them gives the material a second pass through a different channel in your brain, which makes recall easier in the exam room. It also redeems the idle time most students waste: commutes, chores, workouts, queues. Thirty minutes a day of audio revision compounds quickly over a term.
+
+### How to use freetexttospeech.app for revision
+
+1. Open your notes (Notion, Google Docs, OneNote, a PDF, wherever).
+2. Copy the text.
+3. Open freetexttospeech.app and paste into the editor.
+4. Pick a voice in your native language from the voice dropdown.
+5. Push the rate slider to 1.3× — most learners find that's a good "revision speed".
+6. Press Play. The current word is highlighted as the reader goes.
+7. Install the app to your home screen (Chrome: menu → Add to home screen) so you can use it offline on your phone.
+
+### What to put into freetexttospeech.app
+
+**Flashcard-style notes:** Write your revision notes in question/answer pairs. Separate each pair with a blank line. When you listen, pause after the question, try to answer in your head, then resume to hear the answer. It turns a passive playlist into active recall practice.
+
+**Textbook chapters:** Paste a chapter, set the rate to 1.5×, and listen while re-reading the part you already highlighted. The spoken-plus-visual combo is the dual-coding effect in action.
+
+**Essay drafts:** Listen to your own essay read back to you. Clunky sentences and missing words that your eyes glossed over suddenly become obvious. freetexttospeech.app is the cheapest proofreading tool there is.
+
+**Language learning:** Switch the voice to the target language. Paste short dialogues or vocab lists. Hearing native pronunciation at adjustable speed is one of the fastest ways to train your ear for a new language.
+
+### Tips from experienced users
+
+- Start at 1.0×, move up in small steps. Faster isn't better if you miss half of it.
+- Use the Stop button (Esc key) when you want to recall the next bit from memory.
+- Save a "revision mix" — paste everything into one long block and listen during a walk.
+- Use the built-in Pause (Space key) to take notes on anything that surprised you.
+
+### Privacy and study material
+
+Anything you paste into freetexttospeech.app — lecture notes, private essays, your supervisor's feedback — stays in your browser. The page has no backend. No text leaves your device, ever. That matters more than students sometimes realise: many "free" TTS sites quietly log the text you submit as training data.
+
+---
+
+## Page: /pages/text-to-speech-for-accessibility.html
+
+### Text to Speech for Accessibility — Free, Private, Keyboard-Friendly
+
+freetexttospeech.app is a free, browser-based text to speech tool for people with low vision, dyslexia, reading fatigue, or anyone who simply prefers listening to reading. There's no account, no tracking, and nothing is ever uploaded.
+
+### Who this page is for
+
+Full-time screen reader users already have NVDA, JAWS, or VoiceOver — tools that narrate your whole operating system. freetexttospeech.app is the simpler case: you've got a block of text (an email, an article, a PDF selection, a message) and you want to hear it read aloud, cleanly, without installing anything or giving a service access to the content. It's useful on its own and it works well alongside a full screen reader.
+
+### Accessibility features built into freetexttospeech.app
+
+- Keyboard-only operation. Tab moves between controls. Space plays or pauses when focus is outside the text area. Esc stops. Enter activates focused buttons.
+- Dark mode. One click in the header. Low-glare surfaces, high-contrast text.
+- Browser zoom. Ctrl + + (Cmd + + on Mac) enlarges the entire page. The tool reflows to fit.
+- ARIA labels. Every control is labelled so that a screen reader over the top of freetexttospeech.app still announces it correctly.
+- Word highlighting. The currently-spoken word is highlighted as freetexttospeech.app reads, helping dyslexic readers and anyone with tracking difficulties follow along.
+- Adjustable rate and pitch. Slow the voice down to 0.5× when comprehension matters, or speed up to 2× when you just need to skim.
+- No motion animations. The interface uses only short (<0.2s) transitions.
+
+### Why listening helps readers with dyslexia
+
+Many readers with dyslexia describe text as "slippery" — words seem to move or blur on the page. Pairing the visual text with audio anchors the eye to the correct line. The highlighting in freetexttospeech.app makes this even easier: whichever word is being spoken is visually marked, so your eye follows the voice. A lower rate (0.9×) and a familiar voice tend to work best for first-time users.
+
+### Why listening helps people with low vision
+
+Even with OS-level zoom, long reading sessions cause fatigue. freetexttospeech.app lets you paste the content, lean back, and listen — while still having the text on screen in large print if you want to glance back. Because the tool is a single page with no clutter, there's less chrome in the way of the words themselves.
+
+### Privacy matters for accessibility tools
+
+Many accessibility tools quietly phone home, logging the content people need read aloud — including private emails, medical letters, and financial paperwork. freetexttospeech.app has zero analytics, zero third-party requests after the initial font load, and no backend. Your text stays in your browser.
+
+---
+
+## Page: /pages/how-to-convert-text-to-audio.html
+
+### How to Convert Text to Audio for Free
+
+If you want to turn an article, essay, or block of notes into an audio file without paying, signing up, or uploading anything, freetexttospeech.app does it in about four clicks. Here is the full process, plus what to do when the browser gets in the way.
+
+### The short version
+
+1. Open freetexttospeech.app. Any modern browser works; Chrome or Edge give the best recording support.
+2. Paste your text. Drop it into the editor at the top of the page. No character limit.
+3. Pick a voice. The dropdown lists every voice your OS and browser provide, grouped by language.
+4. Set rate, pitch, volume. Drag the sliders to the sound you want. You can preview first with the Play button.
+5. Click Download audio. freetexttospeech.app plays the speech and captures it to a .webm audio file on your device.
+
+### What you get
+
+The output is a .webm file encoded with Opus, sampled at your OS's default voice quality. Every modern player — VLC, QuickTime, Windows Media Player, browser-based podcast apps, Audacity, ffmpeg — reads .webm natively. If your workflow requires .mp3, convert it in any free audio converter, or upgrade to Pro voices on freesuite.app which export .mp3 directly.
+
+### Which browsers actually record the audio
+
+Capturing synthesised speech as a file is a quiet corner of the Web Speech API. Support isn't universal yet:
+
+- Chrome and Edge (desktop): reliable. The download button produces a real audio file.
+- Chrome on Android: works on most devices.
+- Safari (desktop and iOS): playback works, recording is limited. On Safari, freetexttospeech.app will still play the audio aloud — use your device's built-in screen recorder to capture it if needed.
+- Firefox: similar to Safari. Fine for listening, patchy for recording.
+
+If the download produces a very small or silent file, your browser is one of the restricted ones. Switch to Chrome or Edge and try again.
+
+### Tips for a clean audio file
+
+**Mute notifications:** Because freetexttospeech.app records live audio, any system beep that fires while the recording is in progress ends up in the file. Put your phone on silent, quit apps that might ping you, and start the recording.
+
+**Split very long texts:** The Web Speech API can stall on texts over ~30,000 characters in Chrome. freetexttospeech.app kicks the engine every 10 seconds to prevent this, but for a full book, split it into chapters and record each one separately. You end up with neat, navigable files anyway.
+
+**Use a good voice:** The voice matters more than the rate or pitch. On macOS and iOS, the built-in voices (Samantha, Daniel, Karen, Tessa) sound surprisingly natural. On Windows 11, look for voices labelled "Natural" — these are Microsoft's newer neural voices. On Chrome any OS, the Google voices (for example, "Google US English") are a safe bet.
+
+**Save a clean .txt copy:** Use the Save .txt button in the editor toolbar before recording. That way you have the source text alongside the audio — useful for editing or re-recording later.
+
+### When freetexttospeech.app isn't enough
+
+For truly natural audiobook-quality audio, the browser's built-in voices still sound synthetic. Options in that case:
+
+- Use the Pro AI Voices upgrade on freesuite.app — neural voices generated server-side, exported as .mp3.
+- Use macOS's `say -o` command from the terminal to render an .aiff directly from a voice.
+- Use a paid service like ElevenLabs, Play.ht, or Amazon Polly for production audio.
+
+For most personal use cases — listening to an article, sharing a quick recording with a friend, adding voice-over to a slide deck — the free browser output is fine.
+
+---
+
+## About Freesuite
+
+freetexttospeech.app is part of Freesuite — a growing collection of free, browser-based tools with a shared design language. All Freesuite tools share three promises: no sign-up, no uploads, no tracking. Tools are funded by a single optional $2.88/month subscription that unlocks pro features across every tool, but every core tool is free forever.
+
+Other tools include:
+
+- freewordcounter.app — word, character, and reading time counter
+- freenotepad.app — private browser notepad with autosave
+- freecaseconverter.app — convert between upper, lower, title, and sentence case
+- freeloremipsum.app — generate lorem ipsum filler text
+- freepasswordgenerator.app — strong password generator
+- freejsonformatter.app — format and validate JSON
+- freeqrcodegen.app — generate QR codes
+- freetypingtest.app — typing speed test
+- freeimagecompressor.app — compress JPEG/PNG/WebP without upload
+- freepage.app — write documents in your browser
+- freesuite.app — the main index of every tool

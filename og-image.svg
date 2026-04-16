@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#faf9f6"/>
+      <stop offset="100%" stop-color="#f4f2ee"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- speaker icon -->
+  <g transform="translate(120,215)" fill="#C49A2A">
+    <path d="M0 60 L40 60 L95 10 L95 190 L40 140 L0 140 Z"/>
+    <path d="M125 60 a45 45 0 0 1 0 80" stroke="#C49A2A" stroke-width="10" fill="none" stroke-linecap="round"/>
+    <path d="M155 30 a80 80 0 0 1 0 140" stroke="#C49A2A" stroke-width="10" fill="none" stroke-linecap="round"/>
+    <path d="M185 5 a110 110 0 0 1 0 190" stroke="#C49A2A" stroke-width="10" fill="none" stroke-linecap="round"/>
+  </g>
+  <text x="360" y="300" font-family="DM Sans, sans-serif" font-size="64" font-weight="700" fill="#1a1917">freetexttospeech.app</text>
+  <text x="360" y="360" font-family="Lora, serif" font-size="32" fill="#6b6760">Free text to speech, in your browser.</text>
+  <text x="360" y="405" font-family="DM Sans, sans-serif" font-size="22" fill="#9e9b96">No sign-up · No uploads · 50+ voices</text>
+</svg>

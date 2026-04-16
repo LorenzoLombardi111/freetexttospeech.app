@@ -1,0 +1,14 @@
+{
+  "name": "freetexttospeech.app",
+  "short_name": "TextToSpeech",
+  "description": "Free text to speech reader in your browser — no sign-up, no uploads.",
+  "background_color": "#faf9f6",
+  "theme_color": "#faf9f6",
+  "display": "standalone",
+  "start_url": "/",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "/favicon.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "categories": ["utilities", "productivity", "accessibility"]
+}

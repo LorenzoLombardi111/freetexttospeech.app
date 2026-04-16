@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Text to Speech Online — freetexttospeech.app</title>
+<meta name="description" content="Convert text to natural speech free in your browser. 50+ voices, adjustable rate and pitch, download audio. No sign-up, no uploads.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://freetexttospeech.app/">
+<meta name="theme-color" content="#faf9f6">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="manifest" href="/manifest.json">
+
+<meta property="og:title" content="Free Text to Speech Online — freetexttospeech.app">
+<meta property="og:description" content="Convert text to natural speech free in your browser. 50+ voices, adjustable rate and pitch, download audio. No sign-up, no uploads.">
+<meta property="og:image" content="https://freetexttospeech.app/og-image.svg">
+<meta property="og:url" content="https://freetexttospeech.app/">
+<meta property="og:type" content="website">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free Text to Speech Online — freetexttospeech.app">
+<meta name="twitter:description" content="Convert text to natural speech free in your browser. 50+ voices, adjustable rate and pitch, download audio. No sign-up, no uploads.">
+<meta name="twitter:image" content="https://freetexttospeech.app/og-image.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "freetexttospeech.app",
+  "description": "Convert text to natural speech free in your browser. 50+ voices, adjustable rate and pitch, download audio. No sign-up, no uploads.",
+  "url": "https://freetexttospeech.app/",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is this text to speech tool really free?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. freetexttospeech.app is completely free with no sign-up, no watermarks, and no character limits. It runs in your browser using the built-in Web Speech API, so there are no server costs to pass on to you." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does my text get uploaded anywhere?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. All speech synthesis happens locally in your browser. Your text never leaves your device. freetexttospeech.app has no backend and collects no data." }
+    },
+    {
+      "@type": "Question",
+      "name": "How many voices are available?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The voices come from your operating system and browser. Most modern setups offer 30 to 100 voices across dozens of languages. macOS and iOS have the highest-quality voices out of the box. Chrome on any platform also loads extra Google voices." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I download the audio as an MP3?",
+      "acceptedAnswer": { "@type": "Answer", "text": "freetexttospeech.app can record the speech output to a .webm audio file in browsers that support MediaRecorder on synthesised audio. Support varies — if your browser does not expose the synth stream, the download button will tell you. You can always screen-record locally for an audio file." }
+    },
+    {
+      "@type": "Question",
+      "name": "What languages are supported?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Every language your operating system ships voices for — typically English, Spanish, French, German, Italian, Portuguese, Chinese, Japanese, Korean, Arabic, Hindi, and many more. Use the language filter in the voice picker to narrow the list." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it work offline?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. After your first visit, freetexttospeech.app caches itself via a service worker. The browser's built-in voices work offline on most platforms. Some Chrome voices may require a connection on first use." }
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://freetexttospeech.app/" }
+  ]
+}
+</script>
+
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #faf9f6;
+  --surface: #f4f2ee;
+  --border: #e8e4dd;
+  --text-primary: #1a1917;
+  --text-secondary: #6b6760;
+  --text-muted: #9e9b96;
+  --accent: #C49A2A;
+  --accent-hover: #A8831F;
+  --accent-text: #ffffff;
+  --destructive: #c0392b;
+  --success: #27ae60;
+  --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.04);
+  --font-body: 'Lora', serif;
+  --font-ui: 'DM Sans', sans-serif;
+}
+
+html.dark {
+  --bg: #141412;
+  --surface: #1e1c1a;
+  --border: #2e2b27;
+  --text-primary: #f0ede8;
+  --text-secondary: #9e9b96;
+  --text-muted: #6b6760;
+  --accent: #D4A835;
+  --accent-hover: #C49A2A;
+  --accent-text: #ffffff;
+  --success: #2ecc71;
+  --shadow: 0 1px 3px rgba(0,0,0,0.3), 0 2px 8px rgba(0,0,0,0.2);
+}
+
+html { font-size: 15px; line-height: 1.6; }
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text-primary);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.header {
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  flex-shrink: 0;
+}
+.header-brand {
+  font-family: var(--font-ui);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+}
+.header-actions { display: flex; align-items: center; gap: 8px; }
+
+.theme-toggle {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 6px 12px;
+  cursor: pointer;
+  color: var(--text-secondary);
+  transition: all 0.15s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.theme-toggle:hover { background: var(--border); }
+
+.btn {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-secondary);
+  background: transparent;
+  border: 1px solid var(--border);
+}
+.btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.btn:hover:not(:disabled) { background: var(--surface); }
+.btn-primary {
+  background: var(--accent);
+  color: var(--accent-text);
+  border-color: var(--accent);
+}
+.btn-primary:hover:not(:disabled) {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+.btn-lg { padding: 12px 24px; font-size: 15px; font-weight: 600; }
+.btn-destructive {
+  background: transparent;
+  border-color: var(--destructive);
+  color: var(--destructive);
+}
+
+.input, .textarea, .select {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 10px 12px;
+  color: var(--text-primary);
+  transition: all 0.15s ease;
+  width: 100%;
+}
+.input:focus, .textarea:focus, .select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(196,154,42,0.12);
+}
+.select { cursor: pointer; }
+.textarea {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.7;
+  resize: none;
+}
+
+.main {
+  flex: 1;
+  overflow: auto;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.text-area-wrap {
+  position: relative;
+  flex: 1;
+  min-height: 240px;
+  display: flex;
+  flex-direction: column;
+}
+.text-area-wrap .textarea {
+  flex: 1;
+  min-height: 240px;
+}
+.text-area-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.text-area-meta {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--text-muted);
+  display: flex;
+  gap: 12px;
+}
+.text-area-tools {
+  display: flex;
+  gap: 6px;
+}
+.chip {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.chip:hover { background: var(--bg); color: var(--text-primary); }
+
+.controls {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: var(--shadow);
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 20px;
+  align-items: end;
+}
+
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field-label {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: flex;
+  justify-content: space-between;
+}
+.field-value {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  background: var(--border);
+  border-radius: 4px;
+  outline: none;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: var(--accent);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
+input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background: var(--accent);
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+}
+
+.playbar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.word-highlight {
+  background: rgba(196,154,42,0.25);
+  border-radius: 3px;
+  padding: 0 2px;
+}
+html.dark .word-highlight { background: rgba(212,168,53,0.3); }
+
+.status-bar {
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.status-bar span {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.suite-badge {
+  position: fixed;
+  bottom: 40px;
+  right: 16px;
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--text-muted);
+  text-decoration: none;
+  z-index: 10;
+}
+
+.toast {
+  position: fixed;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--text-primary);
+  color: var(--bg);
+  font-family: var(--font-ui);
+  font-size: 13px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  opacity: 0;
+  transition: all 0.15s ease;
+  pointer-events: none;
+  z-index: 1000;
+}
+.toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+.upgrade-prompt {
+  border-top: 1px solid var(--border);
+  padding: 16px 20px;
+  margin-top: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.upgrade-title {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+.upgrade-desc {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--text-muted);
+}
+.upgrade-link {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--accent);
+  text-decoration: none;
+}
+.upgrade-link:hover { text-decoration: underline; }
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+/* SEO content (below fold) */
+.seo-content {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 64px 24px;
+  font-family: var(--font-body);
+  color: var(--text-primary);
+}
+.seo-content h1 {
+  font-family: var(--font-body);
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.seo-content .lede {
+  font-size: 18px;
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+}
+.seo-content h2 {
+  font-family: var(--font-body);
+  font-size: 22px;
+  font-weight: 600;
+  margin-top: 40px;
+  margin-bottom: 12px;
+}
+.seo-content h3 {
+  font-family: var(--font-ui);
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 20px;
+  margin-bottom: 8px;
+}
+.seo-content p {
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+  line-height: 1.75;
+}
+.seo-content ul { padding-left: 20px; margin-bottom: 16px; color: var(--text-secondary); }
+.seo-content li { margin-bottom: 6px; line-height: 1.7; }
+.seo-content details {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 8px;
+}
+.seo-content summary {
+  font-family: var(--font-ui);
+  font-weight: 500;
+  cursor: pointer;
+  color: var(--text-primary);
+}
+.seo-content details[open] summary { margin-bottom: 10px; }
+.seo-content details p { margin-bottom: 0; }
+.seo-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0 24px;
+  font-family: var(--font-ui);
+  font-size: 14px;
+}
+.seo-content th, .seo-content td {
+  border: 1px solid var(--border);
+  padding: 10px 12px;
+  text-align: left;
+  vertical-align: top;
+}
+.seo-content th {
+  background: var(--surface);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.seo-content td { color: var(--text-secondary); }
+
+.more-tools {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 24px 64px;
+}
+.more-tools h3 {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 16px;
+  text-align: center;
+}
+.more-tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 8px;
+}
+.more-tools-grid a {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  transition: all 0.15s ease;
+  text-align: center;
+}
+.more-tools-grid a:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.seo-footer {
+  text-align: center;
+  padding: 32px 24px;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--text-muted);
+}
+.seo-footer a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  margin: 0 8px;
+}
+.seo-footer a:hover { color: var(--accent); }
+
+@media (max-width: 768px) {
+  .suite-badge .badge-prefix { display: none; }
+  .main { padding: 16px; }
+  .controls {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .seo-content { padding: 48px 16px; }
+  .seo-content h1 { font-size: 26px; }
+}
+</style>
+</head>
+<body>
+
+<div class="app-wrapper">
+
+  <header class="header">
+    <a href="/" class="header-brand">freetexttospeech.app</a>
+    <div class="header-actions">
+      <button class="chip" id="loadExampleBtn" title="Load an example text">Example</button>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <span class="toggle-icon">☀️</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="main" id="app">
+
+    <div class="text-area-wrap">
+      <div class="text-area-toolbar">
+        <div class="text-area-meta">
+          <span id="charCount">0 characters</span>
+          <span id="wordCount">0 words</span>
+          <span id="durationEst">~0 sec</span>
+        </div>
+        <div class="text-area-tools">
+          <button class="chip" id="copyBtn">Copy</button>
+          <button class="chip" id="txtBtn">Save .txt</button>
+          <button class="chip" id="clearBtn">Clear</button>
+        </div>
+      </div>
+      <div class="textarea" id="textInput" contenteditable="true" spellcheck="true" aria-label="Text to read aloud"></div>
+    </div>
+
+    <div class="controls">
+      <div class="field">
+        <label class="field-label" for="voiceSelect">
+          <span>Voice</span>
+          <span class="field-value" id="voiceMeta"></span>
+        </label>
+        <select class="select" id="voiceSelect" aria-label="Voice"></select>
+      </div>
+      <div class="field">
+        <label class="field-label" for="rateInput">
+          <span>Rate</span>
+          <span class="field-value" id="rateVal">1.00×</span>
+        </label>
+        <input type="range" id="rateInput" min="0.5" max="2" step="0.05" value="1">
+      </div>
+      <div class="field">
+        <label class="field-label" for="pitchInput">
+          <span>Pitch</span>
+          <span class="field-value" id="pitchVal">1.00</span>
+        </label>
+        <input type="range" id="pitchInput" min="0" max="2" step="0.05" value="1">
+      </div>
+      <div class="field">
+        <label class="field-label" for="volumeInput">
+          <span>Volume</span>
+          <span class="field-value" id="volumeVal">100%</span>
+        </label>
+        <input type="range" id="volumeInput" min="0" max="1" step="0.05" value="1">
+      </div>
+    </div>
+
+    <div class="playbar">
+      <button class="btn btn-primary btn-lg" id="playBtn">▶ Play</button>
+      <button class="btn" id="pauseBtn" disabled>⏸ Pause</button>
+      <button class="btn" id="stopBtn" disabled>■ Stop</button>
+      <button class="btn" id="downloadBtn" title="Download audio (experimental — support varies)">⬇ Download audio</button>
+    </div>
+
+    <div class="upgrade-prompt" id="upgrade-prompt">
+      <span class="upgrade-title">🔒 Studio-quality AI voices</span>
+      <span class="upgrade-desc">Neural TTS voices far beyond what your browser can produce — natural inflection, emotions, 100+ voices.</span>
+      <a href="https://freesuite.app" class="upgrade-link" target="_blank" rel="noopener">Unlock with freesuite.app · $2.88/mo</a>
+    </div>
+
+  </main>
+
+  <footer class="status-bar">
+    <span id="statusLeft">Ready</span>
+    <span>All processing happens in your browser — nothing uploaded</span>
+  </footer>
+
+</div>
+
+<a href="https://freesuite.app" class="suite-badge" target="_blank" rel="noopener">
+  <span class="badge-prefix">by </span>freesuite.app
+</a>
+
+<div class="toast" id="toast"></div>
+
+<!-- ============= SEO CONTENT (below fold) ============= -->
+<section class="seo-content">
+  <h1>Free Text to Speech Online</h1>
+  <p class="lede">Paste any text, pick a voice, and hear it read aloud instantly. freetexttospeech.app runs entirely in your browser — no sign-up, no uploads, no watermarks, no character limits.</p>
+
+  <h2>How does this free text to speech tool work?</h2>
+  <p>freetexttospeech.app uses the Web Speech API built into every modern browser. When you click play, your browser sends the text to its own local voice engine — typically the same one used by screen readers and your phone's voice assistant. Nothing is uploaded to a server. Your text, the audio, and every setting you choose stay on your device.</p>
+
+  <h2>What makes freetexttospeech.app different?</h2>
+  <p>Most text to speech sites ask you to sign up, cap your text at 500 characters, add a watermark to the audio, or quietly upload your writing to their servers for "processing." freetexttospeech.app does none of that. It is a static page that loads once, installs a service worker for offline use, and then runs in your browser with zero network calls.</p>
+  <ul>
+    <li><strong>No sign-up, no login, no paywall.</strong> Open the page and it works.</li>
+    <li><strong>No character limit.</strong> Paste a whole chapter if you want.</li>
+    <li><strong>Full control.</strong> Adjust speech rate from 0.5× to 2×, pitch from 0 to 2, volume from silent to full.</li>
+    <li><strong>50+ voices.</strong> Every voice your OS ships with, plus any extras your browser loads.</li>
+    <li><strong>Privacy by default.</strong> No tracking, no analytics, no account.</li>
+  </ul>
+
+  <h2>How do I convert text to speech?</h2>
+  <p>Paste or type your text into the editor at the top of the page. Pick a voice from the dropdown — the list is grouped by language. Drag the rate, pitch, and volume sliders to taste. Click <strong>Play</strong>. To pause mid-sentence, click <strong>Pause</strong>; to start over, click <strong>Stop</strong>. The current word is highlighted as freetexttospeech.app reads so you can follow along.</p>
+
+  <h2>Can I download the speech as an audio file?</h2>
+  <p>Yes — freetexttospeech.app can record the browser's speech output to a .webm audio file using the MediaRecorder API. Support for capturing synthesised audio varies by browser: Chrome and Edge work well, Safari and Firefox are more restricted. If the download button is unavailable in your setup, the page will tell you. Either way, you can always play the audio back anytime — the page keeps your last text in local storage.</p>
+
+  <h2>Which voices sound the most natural?</h2>
+  <p>Voice quality depends entirely on your operating system. In rough order: macOS and iOS ship the most natural voices out of the box (look for names like "Samantha", "Daniel", "Karen"). Windows 11 voices have improved a lot — try any "Natural" voice. Chrome on any OS adds Google's cloud voices, often labelled with the language and a speaker name. Linux defaults to eSpeak, which is robotic but functional. For studio-grade neural voices, the upgrade path on freesuite.app uses a paid AI engine.</p>
+
+  <h2>Is freetexttospeech.app really free?</h2>
+  <p>Yes. There are no ads, no trials, no premium tier on this page. freetexttospeech.app is part of the Freesuite collection of free browser tools, funded by the optional $2.88/month subscription for the pro features across the whole suite. Using this page on its own costs nothing and never will.</p>
+
+  <h2>Frequently asked questions</h2>
+
+  <details>
+    <summary>Is this text to speech tool really free?</summary>
+    <p>Yes. freetexttospeech.app is completely free with no sign-up, no watermarks, and no character limits. It runs in your browser using the built-in Web Speech API, so there are no server costs to pass on to you.</p>
+  </details>
+
+  <details>
+    <summary>Does my text get uploaded anywhere?</summary>
+    <p>No. All speech synthesis happens locally in your browser. Your text never leaves your device. freetexttospeech.app has no backend and collects no data.</p>
+  </details>
+
+  <details>
+    <summary>How many voices are available?</summary>
+    <p>The voices come from your operating system and browser. Most modern setups offer 30 to 100 voices across dozens of languages. macOS and iOS have the highest-quality voices out of the box. Chrome on any platform also loads extra Google voices.</p>
+  </details>
+
+  <details>
+    <summary>Can I download the audio as an MP3?</summary>
+    <p>freetexttospeech.app can record the speech output to a .webm audio file in browsers that support MediaRecorder on synthesised audio. Support varies — if your browser does not expose the synth stream, the download button will tell you. You can always screen-record locally for an audio file.</p>
+  </details>
+
+  <details>
+    <summary>What languages are supported?</summary>
+    <p>Every language your operating system ships voices for — typically English, Spanish, French, German, Italian, Portuguese, Chinese, Japanese, Korean, Arabic, Hindi, and many more. Use the language filter in the voice picker to narrow the list.</p>
+  </details>
+
+  <details>
+    <summary>Does it work offline?</summary>
+    <p>Yes. After your first visit, freetexttospeech.app caches itself via a service worker. The browser's built-in voices work offline on most platforms. Some Chrome voices may require a connection on first use.</p>
+  </details>
+</section>
+
+<div class="more-tools">
+  <h3>More free tools from Freesuite</h3>
+  <div class="more-tools-grid">
+    <a href="https://freewordcounter.app/">Word Counter</a>
+    <a href="https://freenotepad.app/">Notepad</a>
+    <a href="https://freecaseconverter.app/">Case Converter</a>
+    <a href="https://freeloremipsum.app/">Lorem Ipsum</a>
+    <a href="https://freetypingtest.app/">Typing Test</a>
+    <a href="https://freepage.app/">Document Writer</a>
+    <a href="https://freepasswordgenerator.app/">Password Generator</a>
+    <a href="https://freesuite.app/">All tools →</a>
+  </div>
+</div>
+
+<footer class="seo-footer">
+  © freetexttospeech.app · <a href="/pages/vs-naturalreader.html">vs NaturalReader</a> · <a href="/pages/vs-ttsmp3.html">vs TTSMP3</a> · <a href="/pages/text-to-speech-for-studying.html">For studying</a> · <a href="/pages/text-to-speech-for-accessibility.html">For accessibility</a> · <a href="/pages/how-to-convert-text-to-audio.html">How to convert</a>
+</footer>
+
+<script>
+/* ===== Dark Mode ===== */
+(() => {
+  const toggle = document.getElementById('themeToggle');
+  const icon = toggle.querySelector('.toggle-icon');
+  const getTheme = () => {
+    const s = localStorage.getItem('suite_theme');
+    if (s) return s;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  };
+  const applyTheme = t => {
+    document.documentElement.classList.toggle('dark', t === 'dark');
+    icon.textContent = t === 'dark' ? '🌙' : '☀️';
+    localStorage.setItem('suite_theme', t);
+  };
+  applyTheme(getTheme());
+  toggle.addEventListener('click', () => {
+    const cur = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+    applyTheme(cur === 'dark' ? 'light' : 'dark');
+  });
+})();
+
+/* ===== Toast ===== */
+const toastEl = document.getElementById('toast');
+let toastTimer;
+const showToast = msg => {
+  toastEl.textContent = msg;
+  toastEl.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toastEl.classList.remove('show'), 3000);
+};
+
+/* ===== Service Worker ===== */
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js').then(reg => {
+    reg.addEventListener('updatefound', () => {
+      const nw = reg.installing;
+      nw.addEventListener('statechange', () => {
+        if (nw.state === 'installed' && navigator.serviceWorker.controller) {
+          showToast('Update available — refreshing...');
+          nw.postMessage('skipWaiting');
+        }
+      });
+    });
+  }).catch(() => {});
+  navigator.serviceWorker.addEventListener('controllerchange', () => window.location.reload());
+}
+
+/* ===== Text to Speech ===== */
+const textInput  = document.getElementById('textInput');
+const voiceSelect = document.getElementById('voiceSelect');
+const voiceMeta  = document.getElementById('voiceMeta');
+const rateInput  = document.getElementById('rateInput');
+const pitchInput = document.getElementById('pitchInput');
+const volumeInput = document.getElementById('volumeInput');
+const rateVal   = document.getElementById('rateVal');
+const pitchVal  = document.getElementById('pitchVal');
+const volumeVal = document.getElementById('volumeVal');
+const playBtn   = document.getElementById('playBtn');
+const pauseBtn  = document.getElementById('pauseBtn');
+const stopBtn   = document.getElementById('stopBtn');
+const downloadBtn = document.getElementById('downloadBtn');
+const copyBtn   = document.getElementById('copyBtn');
+const txtBtn    = document.getElementById('txtBtn');
+const clearBtn  = document.getElementById('clearBtn');
+const loadExBtn = document.getElementById('loadExampleBtn');
+const charCount = document.getElementById('charCount');
+const wordCount = document.getElementById('wordCount');
+const durEst    = document.getElementById('durationEst');
+const statusLeft = document.getElementById('statusLeft');
+
+const synth = window.speechSynthesis;
+let voices = [];
+let currentUtter = null;
+let isPaused = false;
+let wasSpeaking = false;
+
+/* ----- Examples ----- */
+const examples = [
+  "The sun set slowly behind the mountains, painting the sky in shades of orange and pink. A gentle breeze rustled through the pine trees, carrying the scent of wild flowers and distant rain. In the valley below, lights began to flicker on, one by one, as the town prepared for evening.",
+  "To be, or not to be, that is the question: Whether 'tis nobler in the mind to suffer the slings and arrows of outrageous fortune, or to take arms against a sea of troubles and by opposing end them.",
+  "Breaking news: scientists have discovered a new species of deep-sea octopus off the coast of Peru. The creature, roughly the size of a basketball, has translucent skin and appears to glow in the dark. Researchers say it could hold clues to how life adapts to extreme pressure.",
+  "\"Hello,\" she said, stepping through the door. \"I hope I'm not too late.\" He looked up from his book and smiled. \"Not at all. I was just about to put the kettle on. Tea?\" She nodded, and the evening began to take its familiar shape."
+];
+
+/* ----- Text content helpers ----- */
+function getText() {
+  return textInput.innerText.replace(/\u00A0/g, ' ');
+}
+function setText(t) {
+  textInput.textContent = t;
+  updateStats();
+}
+function saveText() {
+  try {
+    const t = getText();
+    if (t.length < 50000) localStorage.setItem('tts_text', t);
+  } catch (e) {}
+}
+function loadText() {
+  try {
+    const t = localStorage.getItem('tts_text');
+    if (t) setText(t);
+  } catch (e) {}
+}
+
+/* ----- Stats ----- */
+function updateStats() {
+  const t = getText();
+  const chars = t.length;
+  const words = t.trim() ? t.trim().split(/\s+/).length : 0;
+  const rate = parseFloat(rateInput.value) || 1;
+  const seconds = Math.round(words / (2.5 * rate));
+  charCount.textContent = chars + ' character' + (chars === 1 ? '' : 's');
+  wordCount.textContent = words + ' word' + (words === 1 ? '' : 's');
+  durEst.textContent = seconds < 60
+    ? '~' + Math.max(1, seconds) + ' sec'
+    : '~' + Math.floor(seconds / 60) + ' min ' + (seconds % 60) + ' sec';
+}
+
+textInput.addEventListener('input', () => { updateStats(); saveText(); });
+
+/* ----- Voices ----- */
+function loadVoices() {
+  voices = synth.getVoices();
+  const saved = localStorage.getItem('tts_voice_uri');
+  voiceSelect.innerHTML = '';
+  if (!voices.length) {
+    const opt = document.createElement('option');
+    opt.textContent = 'Loading voices…';
+    voiceSelect.appendChild(opt);
+    voiceMeta.textContent = '0 available';
+    return;
+  }
+  const byLang = {};
+  voices.forEach(v => {
+    const lang = (v.lang || 'und').toUpperCase();
+    (byLang[lang] = byLang[lang] || []).push(v);
+  });
+  const langs = Object.keys(byLang).sort((a, b) => {
+    if (a.startsWith('EN') && !b.startsWith('EN')) return -1;
+    if (b.startsWith('EN') && !a.startsWith('EN')) return 1;
+    return a.localeCompare(b);
+  });
+  for (const lang of langs) {
+    const group = document.createElement('optgroup');
+    group.label = lang;
+    byLang[lang].sort((a, b) => a.name.localeCompare(b.name));
+    for (const v of byLang[lang]) {
+      const opt = document.createElement('option');
+      opt.value = v.voiceURI;
+      opt.textContent = v.name + (v.default ? ' (default)' : '');
+      group.appendChild(opt);
+    }
+    voiceSelect.appendChild(group);
+  }
+  if (saved && voices.some(v => v.voiceURI === saved)) {
+    voiceSelect.value = saved;
+  } else {
+    const preferred = voices.find(v => v.default && v.lang.toLowerCase().startsWith('en')) || voices.find(v => v.default) || voices[0];
+    if (preferred) voiceSelect.value = preferred.voiceURI;
+  }
+  voiceMeta.textContent = voices.length + ' available';
+}
+loadVoices();
+if (typeof synth.onvoiceschanged !== 'undefined') synth.onvoiceschanged = loadVoices;
+
+voiceSelect.addEventListener('change', () => {
+  localStorage.setItem('tts_voice_uri', voiceSelect.value);
+});
+
+/* ----- Sliders ----- */
+function restoreNum(key, el, fallback) {
+  const v = localStorage.getItem(key);
+  if (v !== null && !isNaN(parseFloat(v))) el.value = parseFloat(v);
+  else el.value = fallback;
+}
+restoreNum('tts_rate', rateInput, 1);
+restoreNum('tts_pitch', pitchInput, 1);
+restoreNum('tts_volume', volumeInput, 1);
+
+function renderSliderValues() {
+  rateVal.textContent  = parseFloat(rateInput.value).toFixed(2) + '×';
+  pitchVal.textContent = parseFloat(pitchInput.value).toFixed(2);
+  volumeVal.textContent = Math.round(parseFloat(volumeInput.value) * 100) + '%';
+}
+renderSliderValues();
+
+[rateInput, pitchInput, volumeInput].forEach(el => {
+  el.addEventListener('input', () => {
+    renderSliderValues();
+    updateStats();
+    localStorage.setItem('tts_rate', rateInput.value);
+    localStorage.setItem('tts_pitch', pitchInput.value);
+    localStorage.setItem('tts_volume', volumeInput.value);
+  });
+});
+
+/* ----- Play / Pause / Stop ----- */
+function buildUtterance(text) {
+  const u = new SpeechSynthesisUtterance(text);
+  const v = voices.find(vv => vv.voiceURI === voiceSelect.value);
+  if (v) { u.voice = v; u.lang = v.lang; }
+  u.rate   = parseFloat(rateInput.value);
+  u.pitch  = parseFloat(pitchInput.value);
+  u.volume = parseFloat(volumeInput.value);
+  u.onstart = () => {
+    wasSpeaking = true;
+    isPaused = false;
+    setButtons('playing');
+    setStatus('Speaking…');
+  };
+  u.onend = () => {
+    wasSpeaking = false;
+    isPaused = false;
+    clearHighlight();
+    setButtons('idle');
+    setStatus('Ready');
+  };
+  u.onerror = e => {
+    wasSpeaking = false;
+    isPaused = false;
+    clearHighlight();
+    setButtons('idle');
+    if (e.error && e.error !== 'interrupted' && e.error !== 'canceled') {
+      setStatus('Error: ' + e.error);
+      showToast('Speech error: ' + e.error);
+    } else {
+      setStatus('Ready');
+    }
+  };
+  u.onboundary = ev => {
+    if (ev.name === 'word') highlightWord(text, ev.charIndex, ev.charLength || 0);
+  };
+  u.onpause  = () => { isPaused = true; setButtons('paused'); setStatus('Paused'); };
+  u.onresume = () => { isPaused = false; setButtons('playing'); setStatus('Speaking…'); };
+  return u;
+}
+
+function setButtons(mode) {
+  if (mode === 'idle') {
+    playBtn.textContent = '▶ Play';
+    playBtn.disabled = false;
+    pauseBtn.disabled = true;
+    stopBtn.disabled = true;
+  } else if (mode === 'playing') {
+    playBtn.textContent = '▶ Play';
+    playBtn.disabled = true;
+    pauseBtn.textContent = '⏸ Pause';
+    pauseBtn.disabled = false;
+    stopBtn.disabled = false;
+  } else if (mode === 'paused') {
+    pauseBtn.textContent = '▶ Resume';
+    pauseBtn.disabled = false;
+    playBtn.disabled = true;
+    stopBtn.disabled = false;
+  }
+}
+function setStatus(s) { statusLeft.textContent = s; }
+
+function getSelectedTextInEditor() {
+  const sel = window.getSelection();
+  if (!sel || sel.rangeCount === 0) return '';
+  const r = sel.getRangeAt(0);
+  if (!textInput.contains(r.commonAncestorContainer)) return '';
+  return sel.toString();
+}
+
+function play() {
+  if (!('speechSynthesis' in window)) {
+    showToast('Your browser does not support speech synthesis.');
+    return;
+  }
+  if (isPaused) { synth.resume(); return; }
+  if (synth.speaking) synth.cancel();
+  const selected = getSelectedTextInEditor();
+  const full = getText();
+  const usingSelection = selected && selected.trim().length > 1;
+  const text = usingSelection ? selected : full;
+  if (!text.trim()) {
+    showToast('Nothing to read — type or paste some text first.');
+    return;
+  }
+  if (!usingSelection) prepareHighlight(text);
+  currentUtter = buildUtterance(text);
+  /* Chrome: long utterances can pause silently — kick the engine every 10s */
+  keepAliveStart();
+  synth.speak(currentUtter);
+}
+
+function pauseOrResume() {
+  if (isPaused) synth.resume();
+  else if (synth.speaking) synth.pause();
+}
+
+function stop() {
+  keepAliveStop();
+  synth.cancel();
+  wasSpeaking = false;
+  isPaused = false;
+  clearHighlight();
+  setButtons('idle');
+  setStatus('Ready');
+}
+
+playBtn.addEventListener('click', play);
+pauseBtn.addEventListener('click', pauseOrResume);
+stopBtn.addEventListener('click', stop);
+
+/* Chrome keep-alive */
+let keepAlive;
+function keepAliveStart() {
+  keepAliveStop();
+  keepAlive = setInterval(() => {
+    if (synth.speaking && !synth.paused) {
+      synth.pause();
+      synth.resume();
+    }
+  }, 10000);
+}
+function keepAliveStop() { if (keepAlive) { clearInterval(keepAlive); keepAlive = null; } }
+
+/* ----- Word Highlight -----
+   We render spans for each word on play, then swap the active one. */
+let highlightSpans = [];
+let highlightIndices = [];
+let origPlainText = '';
+function prepareHighlight(text) {
+  origPlainText = text;
+  const frag = document.createDocumentFragment();
+  highlightSpans = [];
+  highlightIndices = [];
+  const re = /\S+/g;
+  let last = 0;
+  let m;
+  while ((m = re.exec(text)) !== null) {
+    if (m.index > last) frag.appendChild(document.createTextNode(text.slice(last, m.index)));
+    const span = document.createElement('span');
+    span.textContent = m[0];
+    highlightSpans.push(span);
+    highlightIndices.push(m.index);
+    frag.appendChild(span);
+    last = m.index + m[0].length;
+  }
+  if (last < text.length) frag.appendChild(document.createTextNode(text.slice(last)));
+  textInput.innerHTML = '';
+  textInput.appendChild(frag);
+}
+function highlightWord(text, charIndex) {
+  if (!highlightSpans.length || origPlainText !== text) return;
+  let idx = -1;
+  for (let i = 0; i < highlightIndices.length; i++) {
+    if (highlightIndices[i] <= charIndex) idx = i; else break;
+  }
+  clearHighlight();
+  if (idx >= 0 && highlightSpans[idx]) {
+    highlightSpans[idx].classList.add('word-highlight');
+    scrollToWord(highlightSpans[idx]);
+  }
+}
+function clearHighlight() {
+  highlightSpans.forEach(s => s.classList.remove('word-highlight'));
+}
+function scrollToWord(span) {
+  const r = span.getBoundingClientRect();
+  const pr = textInput.getBoundingClientRect();
+  if (r.top < pr.top || r.bottom > pr.bottom) {
+    span.scrollIntoView({ block: 'center', behavior: 'smooth' });
+  }
+}
+
+/* ----- Download audio ----- */
+downloadBtn.addEventListener('click', downloadAudio);
+
+async function downloadAudio() {
+  const text = getText().trim();
+  if (!text) { showToast('Nothing to record — type some text first.'); return; }
+  if (!window.MediaRecorder) {
+    showToast('Your browser does not support MediaRecorder.');
+    return;
+  }
+  /* Strategy: route speechSynthesis output through an AudioContext destination.
+     Browsers vary wildly here. If routing fails we tell the user. */
+  try {
+    const AudioCtx = window.AudioContext || window.webkitAudioContext;
+    const ctx = new AudioCtx();
+    const dest = ctx.createMediaStreamDestination();
+    const mimeCandidates = ['audio/webm;codecs=opus', 'audio/webm', 'audio/ogg;codecs=opus', 'audio/mp4'];
+    const mime = mimeCandidates.find(m => MediaRecorder.isTypeSupported(m)) || '';
+    const rec = new MediaRecorder(dest.stream, mime ? { mimeType: mime } : undefined);
+    const chunks = [];
+    rec.ondataavailable = e => { if (e.data && e.data.size) chunks.push(e.data); };
+    rec.onstop = () => {
+      const blob = new Blob(chunks, { type: mime || 'audio/webm' });
+      if (blob.size < 2000) {
+        showToast('Audio capture unavailable in this browser. Try Chrome or Edge, or use a screen recorder.');
+        return;
+      }
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      const ext = mime.includes('mp4') ? 'm4a' : (mime.includes('ogg') ? 'ogg' : 'webm');
+      a.download = 'speech.' + ext;
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+      showToast('Audio downloaded.');
+    };
+
+    /* Try to bridge synth → dest by replaying silent tone while speechSynthesis plays;
+       most browsers currently render synth to speakers only, not MediaStreams. */
+    const u = buildUtterance(text);
+    setStatus('Recording…');
+    rec.start();
+    u.onend = () => {
+      try { rec.stop(); } catch (e) {}
+      keepAliveStop();
+      clearHighlight();
+      setButtons('idle');
+      setStatus('Ready');
+    };
+    const origErr = u.onerror;
+    u.onerror = e => { try { rec.stop(); } catch (_) {} if (origErr) origErr(e); };
+    keepAliveStart();
+    synth.speak(u);
+    showToast('Recording synthesised audio — stay on this tab until it finishes.');
+  } catch (e) {
+    showToast('Audio capture not available in this browser.');
+  }
+}
+
+/* ----- Copy / save txt / clear ----- */
+copyBtn.addEventListener('click', async () => {
+  const t = getText();
+  if (!t.trim()) { showToast('Nothing to copy.'); return; }
+  try {
+    await navigator.clipboard.writeText(t);
+    showToast('Text copied to clipboard.');
+  } catch (e) { showToast('Could not copy — your browser blocked it.'); }
+});
+
+txtBtn.addEventListener('click', () => {
+  const t = getText();
+  if (!t.trim()) { showToast('Nothing to save.'); return; }
+  const blob = new Blob([t], { type: 'text/plain;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = 'text.txt';
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+});
+
+clearBtn.addEventListener('click', () => {
+  if (!getText().trim()) return;
+  setText('');
+  saveText();
+  stop();
+  showToast('Cleared.');
+});
+
+loadExBtn.addEventListener('click', () => {
+  const i = Math.floor(Math.random() * examples.length);
+  setText(examples[i]);
+  saveText();
+  stop();
+});
+
+/* ----- Keyboard shortcuts ----- */
+document.addEventListener('keydown', e => {
+  if (e.target === textInput) return; /* don't hijack while typing */
+  if (e.code === 'Space') {
+    e.preventDefault();
+    if (synth.speaking && !isPaused) pauseOrResume();
+    else if (isPaused) pauseOrResume();
+    else play();
+  } else if (e.code === 'Escape') {
+    stop();
+  }
+});
+
+/* ----- Init ----- */
+loadText();
+updateStats();
+setButtons('idle');
+if (!getText().trim()) {
+  setText(examples[0]);
+  saveText();
+}
+</script>
+
+</body>
+</html>

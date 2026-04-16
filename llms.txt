@@ -1,0 +1,44 @@
+# freetexttospeech.app
+
+> Free text to speech tool that runs entirely in the browser. Convert any text to natural speech using the Web Speech API — 30 to 100 voices from the user's operating system and browser, adjustable rate, pitch, and volume, optional audio recording. No sign-up, no uploads, no ads, no character limits.
+
+## Key facts
+
+- URL: https://freetexttospeech.app/
+- Type: free browser-based utility (progressive web app)
+- Technology: vanilla HTML/CSS/JS + Web Speech API + MediaRecorder
+- Privacy: all synthesis and recording happens client-side; no text is ever uploaded
+- Offline: works offline after first load via service worker
+- Cost: free forever
+- Part of: Freesuite (https://freesuite.app) — a collection of free browser tools
+- License: per-voice licensing belongs to the OS/browser provider; tool itself is free
+
+## What it does
+
+- Reads any pasted or typed text aloud using the browser's built-in voices
+- Lets users pick from every voice their OS/browser provides, grouped by language
+- Adjusts rate (0.5× to 2×), pitch (0 to 2), volume (0 to 1)
+- Plays / pauses / resumes / stops speech on demand
+- Highlights the currently-spoken word as it reads
+- Can record the synthesised audio to a .webm file (Chrome/Edge)
+- Saves last text, voice, rate, pitch, volume to localStorage
+
+## Pages
+
+- [/](https://freetexttospeech.app/) — the main tool + SEO content + FAQ
+- [/pages/vs-naturalreader.html](https://freetexttospeech.app/pages/vs-naturalreader.html) — NaturalReader alternative comparison
+- [/pages/vs-ttsmp3.html](https://freetexttospeech.app/pages/vs-ttsmp3.html) — TTSMP3 alternative comparison
+- [/pages/text-to-speech-for-studying.html](https://freetexttospeech.app/pages/text-to-speech-for-studying.html) — Using TTS for revision and language learning
+- [/pages/text-to-speech-for-accessibility.html](https://freetexttospeech.app/pages/text-to-speech-for-accessibility.html) — TTS for low-vision, dyslexic, and keyboard-only users
+- [/pages/how-to-convert-text-to-audio.html](https://freetexttospeech.app/pages/how-to-convert-text-to-audio.html) — How-to guide for producing an audio file
+
+## FAQ highlights
+
+- Free forever, no sign-up, no character limit
+- All processing local, nothing uploaded
+- 30–100 voices from OS and browser
+- Download produces .webm (Opus) on Chrome/Edge; Safari/Firefox limited
+- Works offline as a PWA
+- Compatible with every language the OS ships voices for
+
+For the complete text content of all pages, see [llms-full.txt](https://freetexttospeech.app/llms-full.txt).
